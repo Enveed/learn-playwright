@@ -31,7 +31,7 @@ async def main():
         await page.screenshot(path="screenshots/dynamicClick.png")
 
         # Stop tracing
-        await context.tracing.stop(path="logs/clicks-trace.zip")
+        await context.tracing.stop(path="logs/buttons-trace.zip")
 
         # Closing browser
         await browser.close()
