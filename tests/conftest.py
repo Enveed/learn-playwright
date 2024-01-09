@@ -6,9 +6,10 @@ from playwright.sync_api import Browser, expect
 def create_context(browser: Browser):
     context = browser.new_context()
     page = context.new_page()
-    page.goto("")
+    page.goto("https://www.saucedemo.com")
 
-    expect(page).to_have_url("")
+    page.locator("#user-name").fill("standard_user")
+    page.locator("#password").fill("secret_sauce")
 
     context.storage_state(path=".auth/auth.json")
     context.close()
