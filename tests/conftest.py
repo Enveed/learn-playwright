@@ -22,4 +22,5 @@ def create_context(browser: Browser):
 def context(create_context, browser: Browser):
     context = browser.new_context(storage_state=".auth/auth.json")
     yield context
+    context.storage_state(path=".auth/auth.json")
     context.close()
